@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd"
+         version="5.0">
+
+    <servlet>
+        <servlet-name>productservlet</servlet-name>
+        <servlet-class>ua.cn.stu.servlet.ProductServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>productservlet</servlet-name>
+        <url-pattern>/product</url-pattern>
+    </servlet-mapping>
+    <servlet>
+        <servlet-name>sellerservlet</servlet-name>
+        <servlet-class>ua.cn.stu.servlet.SellerServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>sellerservlet</servlet-name>
+        <url-pattern>/seller</url-pattern>
+    </servlet-mapping>
+    <listener>
+        <listener-class>ua.cn.stu.listener.StartStopListener</listener-class>
+    </listener>
+</web-app>
