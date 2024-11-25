@@ -14,6 +14,11 @@
 <jsp:useBean id="sellerDAO"
              class="stu.cn.ua.dao.SellerDAO" scope="application"/>
 <h1>Seller page</h1>
+<form method="post" action="seller_search.jsp">
+    <label for="sellername">Enter Seller Name:</label>
+    <input type="text" id="sellername" name="sellername" required/>
+    <input type="submit" value="Search"/>
+</form>
 <form method="post" action="seller">
     <table style="width:100%" border="1">
         <tr>
@@ -71,7 +76,7 @@
 </form>
 <div style="text-align: center; margin-bottom: 20px;">
     <a href="product.jsp">
-        <button style="padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <button style="padding: 10px 20px; font-size: 16px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
             Go to Product page
         </button>
     </a>

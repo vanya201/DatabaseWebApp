@@ -24,13 +24,9 @@ tasks.withType(JavaCompile) {
 dependencies {
     compileOnly('javax.servlet:javax.servlet-api:4.0.1')
     implementation('org.glassfish.jersey.containers:jersey-container-servlet:3.0.4')
-    implementation('org.glassfish.jersey.media:jersey-media-json-jackson:3.0.4')
-    implementation('org.glassfish.jersey.inject:jersey-cdi2-se:3.0.4')
     implementation 'org.hibernate:hibernate-core:5.6.6.Final'
     implementation 'javax.persistence:javax.persistence-api:2.2'
     runtimeOnly 'org.postgresql:postgresql:42.7.3'
-    implementation('org.glassfish.jaxb:jaxb-runtime:3.0.2')
-    implementation('org.jboss.weld.se:weld-se-core:4.0.3.Final')
     implementation 'javax.validation:validation-api:2.0.1.Final'
     implementation 'javax.servlet:jstl:1.2'
 

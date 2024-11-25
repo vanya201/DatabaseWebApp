@@ -25,7 +25,7 @@ public class HibernateDAOFactory {
         configuration.setProperty(AvailableSettings.USER, "postgres");
         configuration.setProperty(AvailableSettings.PASS, "1204");
         configuration.setProperty(AvailableSettings.DIALECT, "org.hibernate.dialect.PostgreSQLDialect");
-        configuration.setProperty(AvailableSettings.HBM2DDL_AUTO, "update");
+        configuration.setProperty(AvailableSettings.HBM2DDL_AUTO, "create");
         configuration.setProperty(AvailableSettings.SHOW_SQL, "true");
         configuration.addAnnotatedClass(Product.class);
         configuration.addAnnotatedClass(Seller.class);

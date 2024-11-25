@@ -1,7 +1,6 @@
 package ua.cn.stu.servlet;
 import stu.cn.ua.dao.SellerDAO;
 import stu.cn.ua.domain.Seller;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;

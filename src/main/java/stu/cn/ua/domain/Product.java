@@ -17,7 +17,7 @@ public class Product {
     @Column(name = "product_name", length = 255)
     private String name;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.MERGE)
+    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.MERGE)
     @JoinColumn(name = "seller_id", referencedColumnName = "seller_id")
     private Seller seller;
 

@@ -39,7 +39,7 @@
                 </td>
                 <td>
                     <c:if test="${product.seller != null}">
-                        <c:out value="${product.seller.id}"/>
+                        <c:out value="${product.seller.name}"/>
                     </c:if>
                 </td>
                 <td>
@@ -88,7 +88,7 @@
 </form>
 <div style="text-align: center; margin-bottom: 20px;">
     <a href="seller.jsp">
-        <button style="padding: 10px 20px; font-size: 16px; background-color: #007BFF; color: white; border: none; border-radius: 5px; cursor: pointer;">
+        <button style="padding: 10px 20px; font-size: 16px; background-color: #28a745; color: white; border: none; border-radius: 5px; cursor: pointer;">
             Go to Seller page
         </button>
     </a>

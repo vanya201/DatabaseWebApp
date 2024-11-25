@@ -21,8 +21,11 @@ pageEncoding="ISO-8859-1"%>
         <input type="text" name="productdescription"
                value="${param.productdescription}"/></p>
     <p>Product Seller:
-        <input type="text" name="sellerId"
-               value="${param.productSellerId}"/></p>
+        <select name="sellerId">
+            <c:forEach var="seller" items="${sellerDAO.allEntities}">
+                <option value="${seller.id}">${seller.name}</option>
+            </c:forEach>
+        </select>
     <input type="submit" name="updateproduct" value="Update product"/>
     <input type= "button" onclick="window.location.href='${productUrl}'"
         value="Cancel">

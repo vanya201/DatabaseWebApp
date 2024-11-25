@@ -4,6 +4,7 @@ import org.hibernate.Criteria;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.criterion.Restrictions;
+import org.hibernate.query.Query;
 
 import java.util.List;
 
@@ -73,8 +74,8 @@ public class AllObjectsDAO<T> {
     public List<T> getAllEntities() {
         Session session = HibernateDAOFactory.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Criteria criteria = session.createCriteria(entityClass);
-        List<T> list =  criteria.list();
+        String hql = "FROM " + entityClass.getName();  // Без подгрузки других сущностей
+        List<T> list = session.createQuery(hql, entityClass).getResultList();
         transaction.commit();
         return list;
     }
@@ -85,10 +86,12 @@ public class AllObjectsDAO<T> {
     public List<T> getEntitiesByField(String fieldName, Object value) {
         Session session = HibernateDAOFactory.getInstance().getSession();
         Transaction transaction = session.beginTransaction();
-        Criteria criteria = session.createCriteria(entityClass)
-                .add(Restrictions.eq(fieldName, value));
-        List<T> list =  criteria.list();
+        String hql = "FROM " + entityClass.getName() + " WHERE " + fieldName + " = :value";
+        Query<T> query = session.createQuery(hql);
+        query.setParameter("value", value);
+        List<T> list = query.list();
         transaction.commit();
         return list;
     }
+
 }
